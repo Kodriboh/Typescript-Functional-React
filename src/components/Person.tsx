@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { useState, ChangeEvent} from 'react';
 
 interface IPersonProps {
     name: string,
     age?: number,
-    isEmployed?: boolean,
+    email?: string,
 };
 
 export const Person: React.FC<IPersonProps> = ({
     name,
     age,
-    isEmployed = false,
+    email = false,
 }) => {
+    const [homeCountry, setHomeCountry] = useState<string | null>(null);
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setHomeCountry(event.target.value);
+    };
+
     return (
         <div>
-            {name} <br />
-            {age} <br />
-            {isEmployed.toString()}
+            <h1>Name: { name }</h1>
+            <h1>Email: { email }</h1>
+            <h1>Age: { age }</h1>
+            <input
+                placeholder='Enter your home country...'
+                onChange={handleChange}
+            />
+
+            <p>Home Country: {homeCountry}</p>
         </div>
     )
 };

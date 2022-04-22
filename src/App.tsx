@@ -8,8 +8,8 @@ export const App : React.FC = () => {
     <div className='App'>
       <Person
         name="Luke"
+        email="developer-lukemccann@outlook.com"
         age={27}
-        isEmployed={true}
       />
     </div>
   );
