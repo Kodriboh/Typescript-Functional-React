@@ -9,6 +9,7 @@ export const App : React.FC = () => {
       <Person
         name="Luke"
         email="developer-lukemccann@outlook.com"
+        gender='Male'
         age={27}
         hairColor={HairColor.Black}
       />

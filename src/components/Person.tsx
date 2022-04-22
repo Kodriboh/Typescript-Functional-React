@@ -4,12 +4,15 @@ export enum HairColor {
     Blonde = 'Hair color is blonde',
     Black = 'Jet black hair',
     Grey = 'You sooo old',
-}
+};
+
+type GenderType = 'Male' | 'Female';
 
 interface IPersonProps {
     name: string,
     age?: number,
     email?: string,
+    gender?: GenderType,
     hairColor?: HairColor,
 };
 
@@ -17,6 +20,7 @@ export const Person: React.FC<IPersonProps> = ({
     name,
     age,
     email = false,
+    gender,
     hairColor,
 }) => {
     const [homeCountry, setHomeCountry] = useState<string | null>(null);
@@ -28,6 +32,7 @@ export const Person: React.FC<IPersonProps> = ({
     return (
         <div>
             <h1>Name: { name }</h1>
+            <h1>Gender: { gender }</h1>
             <h1>Email: { email }</h1>
             <h1>Age: { age }</h1>
             <input
@@ -36,7 +41,7 @@ export const Person: React.FC<IPersonProps> = ({
             />
 
             <p>Home Country: {homeCountry}</p>
-            <p>Hair Color: {HairColor.Black}</p>
+            <p>Hair Color: {hairColor}</p>
         </div>
     )
 };
