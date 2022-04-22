@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface IPersonProps {
+interface IPersonProps {
     name: string,
     age?: number,
     isEmployed?: boolean,
