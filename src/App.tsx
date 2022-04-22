@@ -1,11 +1,16 @@
-import React, { FC } from 'react';
-
+import React from 'react';
 import './App.css';
 
-export const App : FC = () => {
+import { Person } from './components/Person';
+
+export const App : React.FC = () => {
   return (
     <div className='App'>
-      <p>Test</p>
+      <Person
+        name="Luke"
+        age={27}
+        isEmployed={true}
+      />
     </div>
   );
 }
