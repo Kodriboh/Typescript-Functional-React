@@ -1,15 +1,23 @@
 import React, { useState, ChangeEvent} from 'react';
 
+export enum HairColor {
+    Blonde = 'Hair color is blonde',
+    Black = 'Jet black hair',
+    Grey = 'You sooo old',
+}
+
 interface IPersonProps {
     name: string,
     age?: number,
     email?: string,
+    hairColor?: HairColor,
 };
 
 export const Person: React.FC<IPersonProps> = ({
     name,
     age,
     email = false,
+    hairColor,
 }) => {
     const [homeCountry, setHomeCountry] = useState<string | null>(null);
 
@@ -28,6 +36,7 @@ export const Person: React.FC<IPersonProps> = ({
             />
 
             <p>Home Country: {homeCountry}</p>
+            <p>Hair Color: {HairColor.Black}</p>
         </div>
     )
 };

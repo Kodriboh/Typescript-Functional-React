@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { Person } from './components/Person';
+import { Person, HairColor } from './components/Person';
 
 export const App : React.FC = () => {
   return (
@@ -10,6 +10,7 @@ export const App : React.FC = () => {
         name="Luke"
         email="developer-lukemccann@outlook.com"
         age={27}
+        hairColor={HairColor.Black}
       />
     </div>
   );
